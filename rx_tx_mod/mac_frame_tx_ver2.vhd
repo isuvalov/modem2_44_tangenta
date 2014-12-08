@@ -35,6 +35,8 @@ entity mac_frame_tx_ver2 is
 		 spi_ce: out std_logic;  --# '1' is valid
 		 spi_data: out std_logic;
 
+		 o_tangenta: out std_logic;
+
 		 fifo_going_full: out std_logic;
 		 receive_full: out std_logic;
 		 flow_ctrl_req: in std_logic; --# by clkq 
@@ -409,6 +411,11 @@ begin
         if descriptor_ce='1' then
   			s_receive_full<=descriptor(3);
 	    end if;
+
+        if descriptor_ce='1' then
+  			o_tangenta<=descriptor(4);
+	    end if;
+
 
 
 		new_start_w1<=new_start;

@@ -31,6 +31,8 @@ entity mac_frame_rx_ver2 is
 		 spi_ce: out std_logic; --# '1' valid
 		 spi_data: in std_logic;  --# ????????? ?????? ?? falling edge
 
+		 i_tangenta: in std_logic;
+
 		 want_clkq_more: in std_logic;  --#??????????? ???????????? ?????? clkq(????????? ???????? ??????? ??????)
 
 		 fifo_going_full_i: in std_logic;
@@ -305,7 +307,7 @@ changer_freq_rx_inst: entity work.changer_freq_rx
 	     );
 
 
-descriptor_data<="0000"&fifo_going_full_i&answer_to_rx&want_clkq_more_byclkq&hdlc_stream;
+descriptor_data<="000"&tangenta_reg&fifo_going_full_i&answer_to_rx&want_clkq_more_byclkq&hdlc_stream;
 
 
 read_frames4fifo_inst: entity work.read_frames4fifo
@@ -338,6 +340,8 @@ flow_ctrl_ok<=s_flow_ctrl_ok;
 		if rising_edge(clkq) then
 
 		timecnt<=timecnt+1;
+
+		tangenta_reg<=i_tangenta;
 
 		if timecnt=0 then
 			fout_timea<=fcnt_1w;
