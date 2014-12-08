@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="Comp_ADD" direction="Input" source="Hierarchy Database" diff_pair_node="Comp_ADD(n)" >
+		</pin>
+		<pin name="Comp_DIFF" direction="Input" source="Hierarchy Database" diff_pair_node="Comp_DIFF(n)" >
+		</pin>
+		<pin name="Comp_I" direction="Input" source="Hierarchy Database" diff_pair_node="Comp_I(n)" >
+		</pin>
+		<pin name="Comp_Q" direction="Input" source="Hierarchy Database" diff_pair_node="Comp_Q(n)" >
+		</pin>
+		<pin name="from_PLL" direction="Input" source="Hierarchy Database" diff_pair_node="from_PLL(n)" >
+		</pin>
+		<pin name="Loop" direction="Output" source="Hierarchy Database" diff_pair_node="Loop(n)" >
+		</pin>
+		<pin name="Mod_I" direction="Output" source="Hierarchy Database" diff_pair_node="Mod_I(n)" >
+		</pin>
+		<pin name="Mod_Q" direction="Output" source="Hierarchy Database" diff_pair_node="Mod_Q(n)" >
+		</pin>
+		<pin name="to_PLL" direction="Output" source="Hierarchy Database" diff_pair_node="to_PLL(n)" >
+		</pin>
+		<pin name="Mod_I(n)" direction="Output" source="Report Database" diff_pair_node="Mod_I" >
+		</pin>
+		<pin name="Mod_Q(n)" direction="Output" source="Report Database" diff_pair_node="Mod_Q" >
+		</pin>
+		<pin name="Comp_Q(n)" direction="Input" source="Report Database" diff_pair_node="Comp_Q" >
+		</pin>
+		<pin name="Comp_DIFF(n)" direction="Input" source="Report Database" diff_pair_node="Comp_DIFF" >
+		</pin>
+		<pin name="Comp_ADD(n)" direction="Input" source="Report Database" diff_pair_node="Comp_ADD" >
+		</pin>
+		<pin name="Comp_I(n)" direction="Input" source="Report Database" diff_pair_node="Comp_I" >
+		</pin>
+		<pin name="from_PLL(n)" direction="Input" source="Report Database" diff_pair_node="from_PLL" >
+		</pin>
+		<pin name="to_PLL(n)" direction="Output" source="Report Database" diff_pair_node="to_PLL" >
+		</pin>
+		<pin name="Loop(n)" direction="Output" source="Report Database" diff_pair_node="Loop" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

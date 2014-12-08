@@ -1,0 +1,48 @@
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+//
+// Revision Control Information
+//
+// $RCSfile: auk_rs_dec_top_atl.ocp,v $
+// $Source: /disk2/cvs/data/Projects/RS/Units/Dec_atlantic/auk_rs_dec_top_atl.ocp,v $
+//
+// $Revision: 1.1 $
+// $Date: 2004/12/06 17:18:15 $
+// Author				:  Alejandro Diaz-Manero
+// Check in by :  $Author: admanero $
+//
+// Project      :  RS
+//
+// Description	:  OpenCore Plus specification file
+//
+// ALTERA Propietary
+// Copyright 2004 (c) Altera Corporation
+// All rights reserved
+//
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+// Timeout specification
+timeout = 3600 sec;			// This is the hard device timeout-- required
+soft_timeout = 0;			// This is THE optional soft timeout => infinite tethered mode
+
+// OpenCore spec file authentication
+entity = auk_rs_dec_top_atl;			// This specifies target entity-- required
+core_name = 'Reed-Solomon'; 
+
+//hostid = nic:hostid_abc;	// This is optional target user
+//hostid = disk:hostid_def;	// This is optional target user
+
+// Vendor specific messages
+message = 'The data output rsout will remain low after the evaluation time expires';
+
+// Port definition
+//input  in1 = 1’b1;     	// high
+output rsout = all’b0;       	// low all bits
+//input  in_bus = all’b1;	// Force high on all bits in the bus
+//output out_bus = all’b0;	// Force low on all bits in the bus
+
+// Special port names
+//input ‘space comment//’ = 0;  // Contains space and a non-alphanumeric character
+//input ‘timeout’ = 1;      	// Contains a reserved word (timeout)

@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Modem_Elanus">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|altpll_0:inst14|altpll:altpll_component" CBX_FILE_NAME="altpll_0_altpll1.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|altpll_3:inst11|altpll:altpll_component" CBX_FILE_NAME="altpll_3_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|altsyncram:RAM_DP_2" CBX_FILE_NAME="altsyncram_b463.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_rx_ver2:inst2|to_hdlc:to_hdlc_inst|fifo256x2:fifo256x2_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_9si1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|altsyncram:RAM_DP_3" CBX_FILE_NAME="altsyncram_b463.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram" CBX_FILE_NAME="altsyncram_k124.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|altpll_1:inst6|altpll:altpll_component" CBX_FILE_NAME="altpll_1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|conv_eth4_8:inst|altshift_taps:dataout_rtl_2" CBX_FILE_NAME="shift_taps_h6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_rx_ver2:inst2|frame_fifo:frame_fifo_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_q5j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|altsyncram:RAM_DP_4" CBX_FILE_NAME="altsyncram_b463.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux" CBX_FILE_NAME="mux_tsc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:\adv_point_3_and_more:advance_pointer_counter" CBX_FILE_NAME="cntr_7hi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_rx_ver2:inst2|read_frames4fifo:read_frames4fifo_inst|altsyncram:mem1_rtl_1" CBX_FILE_NAME="altsyncram_itg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_rx_ver2:inst2|read_frames4fifo:read_frames4fifo_inst|altsyncram:mem2_rtl_0" CBX_FILE_NAME="altsyncram_itg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|altsyncram:RAM_DP_1" CBX_FILE_NAME="altsyncram_b463.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_mem_atl:mem_ctrl|altsyncram:RAM_DP_err_value" CBX_FILE_NAME="altsyncram_b463.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder" CBX_FILE_NAME="decode_dvf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_read_pointer_counter" CBX_FILE_NAME="cntr_23j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|altpll_2:inst7|altpll:altpll_component" CBX_FILE_NAME="altpll_2_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:read_pointer_counter" CBX_FILE_NAME="cntr_m9j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|frame_fifo:frame_fifo_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_q5j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_chn_atl:chnr|auk_rs_gfdiv:gf_div|altsyncram:rom" CBX_FILE_NAME="altsyncram_hio3.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|LPM_COUNTER:status_advance_pointer_counter" CBX_FILE_NAME="cntr_ggi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|from_hdlc:from_hdlc_inst|fifo256x2:fifo256x2_inst|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_9si1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Modem_Elanus|mac_frame_tx_ver2:inst3|rs_decoder:RS_altera|auk_rs_dec_top_atl:auk_rs_dec_top_atl_inst|auk_rs_bms_atl:\key_half:key|auk_rs_gfdiv:gf_div1|altsyncram:rom" CBX_FILE_NAME="altsyncram_hio3.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

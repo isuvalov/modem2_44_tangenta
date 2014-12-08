@@ -1,0 +1,287 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 352 432)
+	(text "mac_frame_tx_ver2" (rect 5 0 125 12)(font "Arial" ))
+	(text "inst" (rect 8 400 36 412)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 35 12)(font "Arial" ))
+		(text "reset" (rect 21 27 56 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk125" (rect 0 0 42 12)(font "Arial" ))
+		(text "clk125" (rect 21 43 63 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clkq" (rect 0 0 28 12)(font "Arial" ))
+		(text "clkq" (rect 21 59 49 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "rs_reset_i" (rect 0 0 70 12)(font "Arial" ))
+		(text "rs_reset_i" (rect 21 75 91 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "clkq_more_than_clk125" (rect 0 0 148 12)(font "Arial" ))
+		(text "clkq_more_than_clk125" (rect 21 91 169 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Crs" (rect 0 0 21 12)(font "Arial" ))
+		(text "Crs" (rect 21 107 42 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Col" (rect 0 0 21 12)(font "Arial" ))
+		(text "Col" (rect 21 123 42 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "flow_ctrl_req" (rect 0 0 92 12)(font "Arial" ))
+		(text "flow_ctrl_req" (rect 21 139 113 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "flow_ctrl_ok" (rect 0 0 84 12)(font "Arial" ))
+		(text "flow_ctrl_ok" (rect 21 155 105 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "flow_a_get" (rect 0 0 70 12)(font "Arial" ))
+		(text "flow_a_get" (rect 21 171 91 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "dv_in" (rect 0 0 35 12)(font "Arial" ))
+		(text "dv_in" (rect 21 187 56 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "useRS" (rect 0 0 35 12)(font "Arial" ))
+		(text "useRS" (rect 21 203 56 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "data_in[7..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "data_in[7..0]" (rect 21 219 113 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "ce_in" (rect 0 0 35 12)(font "Arial" ))
+		(text "ce_in" (rect 21 235 56 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
+		(pt 336 32)
+		(output)
+		(text "need_to_clkq_big" (rect 0 0 113 12)(font "Arial" ))
+		(text "need_to_clkq_big" (rect 202 27 315 39)(font "Arial" ))
+		(line (pt 336 32)(pt 320 32)(line_width 1))
+	)
+	(port
+		(pt 336 48)
+		(output)
+		(text "Tx_er" (rect 0 0 35 12)(font "Arial" ))
+		(text "Tx_er" (rect 280 43 315 55)(font "Arial" ))
+		(line (pt 336 48)(pt 320 48)(line_width 1))
+	)
+	(port
+		(pt 336 64)
+		(output)
+		(text "Tx_en" (rect 0 0 35 12)(font "Arial" ))
+		(text "Tx_en" (rect 280 59 315 71)(font "Arial" ))
+		(line (pt 336 64)(pt 320 64)(line_width 1))
+	)
+	(port
+		(pt 336 80)
+		(output)
+		(text "Txd[7..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "Txd[7..0]" (rect 252 75 315 87)(font "Arial" ))
+		(line (pt 336 80)(pt 320 80)(line_width 3))
+	)
+	(port
+		(pt 336 96)
+		(output)
+		(text "tp[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "tp[7..0]" (rect 259 91 315 103)(font "Arial" ))
+		(line (pt 336 96)(pt 320 96)(line_width 3))
+	)
+	(port
+		(pt 336 112)
+		(output)
+		(text "write_irq" (rect 0 0 63 12)(font "Arial" ))
+		(text "write_irq" (rect 252 107 315 119)(font "Arial" ))
+		(line (pt 336 112)(pt 320 112)(line_width 1))
+	)
+	(port
+		(pt 336 128)
+		(output)
+		(text "spi_clk" (rect 0 0 49 12)(font "Arial" ))
+		(text "spi_clk" (rect 266 123 315 135)(font "Arial" ))
+		(line (pt 336 128)(pt 320 128)(line_width 1))
+	)
+	(port
+		(pt 336 144)
+		(output)
+		(text "spi_ce" (rect 0 0 42 12)(font "Arial" ))
+		(text "spi_ce" (rect 273 139 315 151)(font "Arial" ))
+		(line (pt 336 144)(pt 320 144)(line_width 1))
+	)
+	(port
+		(pt 336 160)
+		(output)
+		(text "spi_data" (rect 0 0 56 12)(font "Arial" ))
+		(text "spi_data" (rect 259 155 315 167)(font "Arial" ))
+		(line (pt 336 160)(pt 320 160)(line_width 1))
+	)
+	(port
+		(pt 336 176)
+		(output)
+		(text "fifo_going_full" (rect 0 0 106 12)(font "Arial" ))
+		(text "fifo_going_full" (rect 209 171 315 183)(font "Arial" ))
+		(line (pt 336 176)(pt 320 176)(line_width 1))
+	)
+	(port
+		(pt 336 192)
+		(output)
+		(text "receive_full" (rect 0 0 84 12)(font "Arial" ))
+		(text "receive_full" (rect 231 187 315 199)(font "Arial" ))
+		(line (pt 336 192)(pt 320 192)(line_width 1))
+	)
+	(port
+		(pt 336 208)
+		(output)
+		(text "flow_ctrl_req_a" (rect 0 0 106 12)(font "Arial" ))
+		(text "flow_ctrl_req_a" (rect 209 203 315 215)(font "Arial" ))
+		(line (pt 336 208)(pt 320 208)(line_width 1))
+	)
+	(port
+		(pt 336 224)
+		(output)
+		(text "flow_ctrl_ok_a" (rect 0 0 99 12)(font "Arial" ))
+		(text "flow_ctrl_ok_a" (rect 216 219 315 231)(font "Arial" ))
+		(line (pt 336 224)(pt 320 224)(line_width 1))
+	)
+	(port
+		(pt 336 240)
+		(output)
+		(text "pause_mode_o" (rect 0 0 84 12)(font "Arial" ))
+		(text "pause_mode_o" (rect 231 235 315 247)(font "Arial" ))
+		(line (pt 336 240)(pt 320 240)(line_width 1))
+	)
+	(port
+		(pt 336 256)
+		(output)
+		(text "flow_ctrl_answer" (rect 0 0 113 12)(font "Arial" ))
+		(text "flow_ctrl_answer" (rect 202 251 315 263)(font "Arial" ))
+		(line (pt 336 256)(pt 320 256)(line_width 1))
+	)
+	(port
+		(pt 336 272)
+		(output)
+		(text "frames_reg01[63..0]" (rect 0 0 134 12)(font "Arial" ))
+		(text "frames_reg01[63..0]" (rect 181 267 315 279)(font "Arial" ))
+		(line (pt 336 272)(pt 320 272)(line_width 3))
+	)
+	(port
+		(pt 336 288)
+		(output)
+		(text "ErrRS_reg02[31..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "ErrRS_reg02[31..0]" (rect 188 283 315 295)(font "Arial" ))
+		(line (pt 336 288)(pt 320 288)(line_width 3))
+	)
+	(port
+		(pt 336 304)
+		(output)
+		(text "failRS_reg03[31..0]" (rect 0 0 134 12)(font "Arial" ))
+		(text "failRS_reg03[31..0]" (rect 181 299 315 311)(font "Arial" ))
+		(line (pt 336 304)(pt 320 304)(line_width 3))
+	)
+	(port
+		(pt 336 320)
+		(output)
+		(text "SyncFindLED" (rect 0 0 77 12)(font "Arial" ))
+		(text "SyncFindLED" (rect 238 315 315 327)(font "Arial" ))
+		(line (pt 336 320)(pt 320 320)(line_width 1))
+	)
+	(port
+		(pt 336 336)
+		(output)
+		(text "bad_channelLED" (rect 0 0 99 12)(font "Arial" ))
+		(text "bad_channelLED" (rect 216 331 315 343)(font "Arial" ))
+		(line (pt 336 336)(pt 320 336)(line_width 1))
+	)
+	(port
+		(pt 336 352)
+		(output)
+		(text "start_correct" (rect 0 0 92 12)(font "Arial" ))
+		(text "start_correct" (rect 223 347 315 359)(font "Arial" ))
+		(line (pt 336 352)(pt 320 352)(line_width 1))
+	)
+	(port
+		(pt 336 368)
+		(output)
+		(text "sync_for_test" (rect 0 0 92 12)(font "Arial" ))
+		(text "sync_for_test" (rect 223 363 315 375)(font "Arial" ))
+		(line (pt 336 368)(pt 320 368)(line_width 1))
+	)
+	(parameter
+		"CLKQ_SLOW"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 320 400)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 352 -64 452 16))
+)
