@@ -24,7 +24,7 @@ entity mac_frame_rx_ver2 is
 		 Col: in std_logic;
 		 tp : out std_logic_vector(7 downto 0);
 		 
-		 reg01: out std_logic_vector(63 downto 0); --# ?????????? ?????????? ???????? ??????? 
+		 reg01: out std_logic_vector(63 downto 0); --# frame counter, that comes from PHY
 
 		 read_irq: in std_logic; --# look on rising edge
          spi_clk: out std_logic;
@@ -144,7 +144,7 @@ signal pause_mode_i_1w,pause_mode_i_2w,can_be_real_full_1w,can_be_real_full:std_
 signal timecnt:std_logic_vector(4 downto 0):=(others=>'0');
 signal flow_ctrl_req_a_cnt,flow_ctrl_ok_a_cnt:std_logic_vector(3 downto 0):=(others=>'0');
 signal flow_ctrl_req_a_wide,flow_ctrl_ok_a_wide:std_logic;
-signal flow_ctrl_req_a_byclkq,flow_ctrl_ok_a_byclkq:std_logic;
+signal flow_ctrl_req_a_byclkq,flow_ctrl_ok_a_byclkq,tangenta_reg:std_logic;
 
 signal full_w:std_logic_vector(10 downto 0):=(others=>'0');
 type Treset_states is (WAITING,RESETING,TIMEOUT);
