@@ -37,7 +37,7 @@ constant EMPTY_LEN:natural:=FRAME_LEN-DATA_OFFSET;
 type Tstm is (WAITING0,WAITING,GET_TBD1,GET_TBD2,RECEIVE_BLOCKS,EMPTY_TEST,DV_FORMING,WRITE_EMPTY);
 signal stm:Tstm:=WAITING;
 
-signal get_subframe_start:std_logic;
+signal get_subframe_start,frame_start_1w:std_logic;
 type Tblocks is array(0 to BLOCKNUM-1) of Tblock_descriptor;
 signal blocks:Tblocks;
 signal blocks_cnt:std_logic_vector(log2roundup(BLOCKNUM)-1 downto 0);
@@ -46,12 +46,12 @@ signal s_wr,have_dv_after: std_logic;
 signal s_datawr: std_logic_vector(8 downto 0);
 
 signal big_cnt: std_logic_vector(log2roundup(FRAME_LEN-DATA_OFFSET+1)-1 downto 0);
-signal datain_1w: STD_LOGIC_VECTOR(7 downto 0);
+signal datain_1w,datain_prevfr: STD_LOGIC_VECTOR(7 downto 0);
 signal empty_cnt:std_logic_vector(log2roundup(EMPTY_LEN)-1 downto 0);
 signal mark_point:std_logic;
-signal frame_cnt:STD_LOGIC_VECTOR(2 downto 0);
+signal frame_cnt_1reg,frame_cnt:STD_LOGIC_VECTOR(2 downto 0);
 signal framelen_cnt:std_logic_vector(log2roundup(FRAME_LEN-DATA_OFFSET)-1 downto 0);
-signal s_rd_out: std_logic;
+signal s_rd_out,good_fr_start: std_logic;
 
 constant half_value:std_logic_vector(rdcount'Length-1 downto 0):='1'&EXT("0",rdcount'Length-1);
 
@@ -91,12 +91,15 @@ begin
 		end if;
 
 		datain_1w<=datain;
+		frame_start_1w<=frame_start;
 
 		if reset='1' then
 			frame_cnt<=(others=>'0');
+			frame_cnt_1reg<=(others=>'0');
 		else
 			if frame_start='1' then
 				frame_cnt<=frame_cnt+1;
+				frame_cnt_1reg<=frame_cnt;
 			end if;
 		end if;
 
@@ -115,9 +118,9 @@ begin
 			stm<=WAITING;
 			s_rd_out<='0';
 		else  --# reset=frame_start
-			if frame_start='1' then
-				frame_cnt<=frame_cnt+1;
-			end if;
+--			if frame_start='1' then
+--				frame_cnt<=frame_cnt+1;
+--			end if;
 --			if data_ce='1' then
 			case stm is
 			when WAITING0=>
@@ -126,8 +129,10 @@ begin
 					if datain=b8array(0) then
 						get_subframe_start<='1';
 						stm<=GET_TBD1;
+						good_fr_start<='1';
 					else
 						get_subframe_start<='0';
+						good_fr_start<='0';
 					end if;
 				end if;
 			when WAITING=>
@@ -139,17 +144,28 @@ begin
 					end if;					
 					stm<=GET_TBD1;
 					s_rd_out<='1';
+					datain_prevfr<=datain;
+					if (datain=b8array(0) and datain_prevfr=b8array(7)) or (datain=b8array(4) and datain_prevfr=b8array(3)) then
+						good_fr_start<='1';
+					else
+						good_fr_start<='0';
+					end if;
 				else
 					s_rd_out<='0';
 					get_subframe_start<='0';
 				end if;
+				
 				tbd1_ce<='0';
 				blocks_cnt<=(others=>'0');
 				s_wr<='0';
 				big_cnt<=(others=>'0');
 			when GET_TBD1=>
 				get_subframe_start<='0';
-				tbd1_ce<='1';
+				if good_fr_start='1' then
+					tbd1_ce<='1';	
+				else
+					tbd1_ce<='0';	
+				end if;
 				tbd1_data<=datain;
 				have_dv_after<=datain(7);
 				stm<=GET_TBD2;

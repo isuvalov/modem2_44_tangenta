@@ -131,6 +131,12 @@ signal flow_a_get12:std_logic;
 
 signal tangenta_12get,tangenta_12,SyncFindLED:std_logic;
 
+signal tangenta_to_slave,tangenta12:std_logic;
+
+signal rx_dv12_buf:std_logic;
+signal rxd12_buf:std_logic_vector(7 downto 0);
+
+
 
 begin
 
@@ -204,7 +210,7 @@ end process;
 makerr<='0';-- after 5 ms; --when time_cnt(5 downto 0)=00 else '0';
 useRS<='1';
 
-RF_1_2<=tx_coded_data12 xor (SXT(makerr&makerr,tx_coded_data_rs'Length));
+RF_1_2<=tx_coded_data12 xor (SXT(makerr&makerr,tx_coded_data_rs'Length)) when tangenta12='1' else (others=>'0');
 RF_2_1<=tx_coded_data21 xor (SXT(makerr&makerr,tx_coded_data_rs'Length));
 
 
@@ -232,18 +238,37 @@ port map(
 );
 
 
+tangenta_manager_master_i:entity work.tangenta_manager_master
+	 port map(
+		 reset=>reset,
+		 clk => clk125,
+
+		 time_of_work=>x"00BB00",
+		 time_of_switchoff=>x"00BB00",
+		 time_of_fake_translation=>x"0000AA",    --# time_of_switchoff >> time_of_fake_translation
+
+		 tangenta_to_slave=>tangenta_to_slave, --# Send it by RF. if it '0' we cut trafic. Stop work RF transiver on slave site
+		 tangenta=>tangenta12 --# if it '0' we cut trafic. Stop work RF transiver
+	     );
 
 
 
---testMAC_inst: entity work.simple_mac_tx
---	 port map(
---		 clk =>clk125,
---		 frame_ce =>ce_fromfile12,
---		 data_in =>data_fromfile12,
---		 tx_en =>Rx_dv12,
----		 tx_er =>Rx_er12,
---		 txd =>Rxd12
---	     );  
+trafic_buf_i: entity work.trafic_buf
+	 port map(
+		 reset =>reset,
+
+		 time_of_fake_translation=>x"0000AA",
+		 tangenta =>tangenta12, --# if it '0' we cut trafic. RF transiver to work
+
+		 clk_phy =>clk125,
+		 i_rx_dv =>ce_fromfile12,
+		 i_rxd =>data_fromfile12,
+
+		 clk_phyq =>clk125,  --# clk_phyq >= clk_phy 
+		 o_rx_dv =>rx_dv12_buf,
+		 o_rxd =>rxd12_buf
+	     );
+
 
 mac_frame_rx_inst: entity work.mac_frame_rx_ver2
 	generic map
@@ -255,13 +280,13 @@ mac_frame_rx_inst: entity work.mac_frame_rx_ver2
 		 clk125 =>clk125,
 		 clkq =>clkq,
 		 Rx_er=>'0',
-		 Rx_dv=>ce_fromfile12,
-		 Rxd=>data_fromfile12,
+		 Rx_dv=>rx_dv12_buf,--ce_fromfile12,
+		 Rxd=>rxd12_buf,--data_fromfile12,
 		 Crs=>'0',
 		 Col=>'0',
 		 tp=>open,
 		 
-		 i_tangenta=>tangenta_12,
+		 i_tangenta=>tangenta_to_slave,
 
 		 reg01 =>open,
 		 read_irq=>read_irq, --# look on rising edge
@@ -344,6 +369,15 @@ mac_frame_tx_inst: entity work.mac_frame_tx_ver2
 		 
 		 data_in=>RF_1_2,
 		 ce_in=>'1'
+	     );
+
+
+tangenta_manager_slave_i: entity work.tangenta_manager_slave
+	 port map(
+		 clk =>clk125,
+
+		 tangenta_from_master=>tangenta_12get, --# Send it by RF. if it '0' we cut trafic. Stop work RF transiver on slave site
+		 tangenta=>open --# if it '0' we cut trafic. Stop work RF transiver
 	     );
 
 

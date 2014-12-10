@@ -89,6 +89,11 @@ vcom -novopt -work work ../rx_tx_mod/mac_frame_rx_ver2.vhd
 vcom -novopt -work work ../rx_tx_mod/mac_frame_tx_ver2.vhd
 
 vcom -novopt -work work phy_emu.vhd 
+
+vcom ../rx_tx_mod/trafic_buf.vhd 
+vcom ../rx_tx_mod/tangenta_manager_master.vhd
+vcom ../rx_tx_mod/tangenta_manager_slave.vhd 
+
 vcom -novopt -work work tb_whole_quadro_div2.vhd 
 
 
