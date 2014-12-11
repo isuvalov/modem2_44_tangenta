@@ -4,7 +4,7 @@
  use IEEE.STD_LOGIC_UNSIGNED.ALL;
   
 
-entity Conv8_4 is 
+entity Conv8_4 is
    port(
 	      RST    : in  std_logic;
 	      clk    : in  std_logic;
