@@ -35,6 +35,8 @@ entity mac_frame_tx_ver2 is
 		 spi_ce: out std_logic;  --# '1' is valid
 		 spi_data: out std_logic;
 
+		 o_tangenta: out std_logic;
+
 		 fifo_going_full: out std_logic;
 		 receive_full: out std_logic;
 		 flow_ctrl_req: in std_logic; --# by clkq 
@@ -168,6 +170,7 @@ signal tx_cnt_timeout:std_logic_vector(4 downto 0);
 signal dv_in_timeout:std_logic_vector(18 downto 0):=(others=>'1');
 signal dv_in_timeout_event_1w,dv_in_timeout_event,dv_in_1w:std_logic;
 signal addpause_w_cnt:std_logic_vector(3 downto 0):=(others=>'0');
+signal decfail_every_word:std_logic;
 
 type Txor_packet is array (0 to 71) of integer;
 constant xor_packet:Txor_packet:=(
@@ -224,7 +227,7 @@ signal reset_with_sync_with_full,s_fifo_going_full:std_logic;
 
 signal timecnt:std_logic_vector(4 downto 0):=(others=>'0');
 signal pause_mode_cnt:std_logic_vector(10 downto 0):=(others=>'1');
-signal pause_mode_cnt_more,cntflow,ok_made,stop_made:std_logic:='0';
+signal pause_mode_cnt_more,cntflow,ok_made,stop_made,s_bad_channelLED:std_logic:='0';
 
 begin
 
@@ -298,8 +301,10 @@ begin
 	 if reset='1' then
 		decfail_cnt<=(others=>'0');
 		reset_by_decfail<='0';
-	 else
-		if source_sop='1' and decfail='1' then
+		decfail_every_word<='0';
+	 else		
+		if source_sop='1' and decfail='1' then			
+			decfail_every_word<='1';
 			decfail_cnt<=decfail_cnt+1;
 			if decfail_cnt=v_decfail_cnt then
 				reset_by_decfail<='1' and useRS;
@@ -308,6 +313,7 @@ begin
 			end if;
 		else
 			if source_sop='1' and decfail='0' then 
+				decfail_every_word<='0';
 				decfail_cnt<=(others=>'0');
 			end if;
 			reset_by_decfail<='0';
@@ -409,6 +415,13 @@ begin
         if descriptor_ce='1' then
   			s_receive_full<=descriptor(3);
 	    end if;
+
+		if SyncFind='1' then
+	        if descriptor_ce='1' and decfail_every_word='0' then
+  				o_tangenta<=descriptor(4);
+		    end if;
+		end if;
+
 
 
 		new_start_w1<=new_start;
@@ -1080,8 +1093,12 @@ stob_scale_inst: entity work.stob_scale
 		 reset =>reset,
 	 	 clk =>clkq,
 		 strob_in =>decfail,
-		 strob_out =>bad_channelLED
+		 strob_out =>s_bad_channelLED
 	     );
+
+
+
+bad_channelLED<=s_bad_channelLED;
 receive_full<='0';--s_receive_full;		 
 		 
 

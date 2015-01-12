@@ -24,12 +24,14 @@ entity mac_frame_rx_ver2 is
 		 Col: in std_logic;
 		 tp : out std_logic_vector(7 downto 0);
 		 
-		 reg01: out std_logic_vector(63 downto 0); --# ?????????? ?????????? ???????? ??????? 
+		 reg01: out std_logic_vector(63 downto 0); --# frame counter, that comes from PHY
 
 		 read_irq: in std_logic; --# look on rising edge
          spi_clk: out std_logic;
 		 spi_ce: out std_logic; --# '1' valid
 		 spi_data: in std_logic;  --# ????????? ?????? ?? falling edge
+
+		 i_tangenta: in std_logic;
 
 		 want_clkq_more: in std_logic;  --#??????????? ???????????? ?????? clkq(????????? ???????? ??????? ??????)
 
@@ -142,7 +144,7 @@ signal pause_mode_i_1w,pause_mode_i_2w,can_be_real_full_1w,can_be_real_full:std_
 signal timecnt:std_logic_vector(4 downto 0):=(others=>'0');
 signal flow_ctrl_req_a_cnt,flow_ctrl_ok_a_cnt:std_logic_vector(3 downto 0):=(others=>'0');
 signal flow_ctrl_req_a_wide,flow_ctrl_ok_a_wide:std_logic;
-signal flow_ctrl_req_a_byclkq,flow_ctrl_ok_a_byclkq:std_logic;
+signal flow_ctrl_req_a_byclkq,flow_ctrl_ok_a_byclkq,tangenta_reg:std_logic;
 
 signal full_w:std_logic_vector(10 downto 0):=(others=>'0');
 type Treset_states is (WAITING,RESETING,TIMEOUT);
@@ -305,7 +307,7 @@ changer_freq_rx_inst: entity work.changer_freq_rx
 	     );
 
 
-descriptor_data<="0000"&fifo_going_full_i&answer_to_rx&want_clkq_more_byclkq&hdlc_stream;
+descriptor_data<="000"&tangenta_reg&fifo_going_full_i&answer_to_rx&want_clkq_more_byclkq&hdlc_stream;
 
 
 read_frames4fifo_inst: entity work.read_frames4fifo
@@ -338,6 +340,8 @@ flow_ctrl_ok<=s_flow_ctrl_ok;
 		if rising_edge(clkq) then
 
 		timecnt<=timecnt+1;
+
+		tangenta_reg<=i_tangenta;
 
 		if timecnt=0 then
 			fout_timea<=fcnt_1w;

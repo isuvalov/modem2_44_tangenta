@@ -585,7 +585,7 @@ applicable agreement for further details.
 	(annotation_block (location)(rect -312 792 -248 808))
 )
 (symbol
-	(rect -104 824 168 1144)
+	(rect -128 1088 144 1408)
 	(text "mac_frame_rx_ver2" (rect 5 0 105 12)(font "Arial" ))
 	(text "inst2" (rect 8 304 31 316)(font "Arial" ))
 	(port
@@ -778,10 +778,10 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 256 304))
 	)
-	(annotation_block (parameter)(rect -72 760 120 792))
+	(annotation_block (parameter)(rect -96 1024 96 1056))
 )
 (symbol
-	(rect 336 776 672 1192)
+	(rect 336 1000 672 1416)
 	(text "mac_frame_tx_ver2" (rect 5 0 105 12)(font "Arial" ))
 	(text "inst3" (rect 8 400 31 412)(font "Arial" ))
 	(port
@@ -1044,7 +1044,7 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 320 400))
 	)
-	(annotation_block (parameter)(rect 408 736 600 768))
+	(annotation_block (parameter)(rect 408 960 600 992))
 )
 (symbol
 	(rect 1264 -72 1448 56)
@@ -1233,7 +1233,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -424 872 -248 1056)
+	(rect -488 1224 -312 1408)
 	(text "conv_eth4_8" (rect 5 0 68 12)(font "Arial" ))
 	(text "inst" (rect 8 168 25 180)(font "Arial" ))
 	(port
@@ -1304,7 +1304,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 832 848 1000 992)
+	(rect 872 1272 1040 1416)
 	(text "conv_eth8_4" (rect 5 0 68 12)(font "Arial" ))
 	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
 	(port
@@ -1936,6 +1936,163 @@ applicable agreement for further details.
 		(line (pt 239 112)(pt 207 112))
 	)
 )
+(symbol
+	(rect -456 864 -64 992)
+	(text "tangenta_manager_master" (rect 5 0 135 12)(font "Arial" ))
+	(text "inst17" (rect 8 112 37 124)(font " Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "time_of_work[23..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "time_of_work[23..0]" (rect 21 59 118 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "time_of_switchoff[23..0]" (rect 0 0 121 12)(font "Arial" ))
+		(text "time_of_switchoff[23..0]" (rect 21 75 142 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "time_of_fake_translation[23..0]" (rect 0 0 154 12)(font "Arial" ))
+		(text "time_of_fake_translation[23..0]" (rect 21 91 175 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 392 32)
+		(output)
+		(text "tangenta_to_slave" (rect 0 0 90 12)(font "Arial" ))
+		(text "tangenta_to_slave" (rect 251 27 341 39)(font "Arial" ))
+		(line (pt 392 32)(pt 376 32))
+	)
+	(port
+		(pt 392 48)
+		(output)
+		(text "tangenta" (rect 0 0 42 12)(font "Arial" ))
+		(text "tangenta" (rect 315 43 357 55)(font "Arial" ))
+		(line (pt 392 48)(pt 376 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 376 112))
+	)
+)
+(symbol
+	(rect 376 656 624 752)
+	(text "tangenta_manager_slave" (rect 5 0 128 12)(font "Arial" ))
+	(text "inst18" (rect 8 80 37 92)(font " Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "tangenta_from_master" (rect 0 0 112 12)(font "Arial" ))
+		(text "tangenta_from_master" (rect 21 43 133 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "tangenta" (rect 0 0 42 12)(font "Arial" ))
+		(text "tangenta" (rect 171 27 213 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 80))
+	)
+)
+(symbol
+	(rect 16 776 368 936)
+	(text "trafic_buf" (rect 5 0 53 12)(font "Arial" ))
+	(text "inst24" (rect 8 144 37 156)(font " Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "time_of_fake_translation[23..0]" (rect 0 0 154 12)(font "Arial" ))
+		(text "time_of_fake_translation[23..0]" (rect 21 43 175 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "tangenta" (rect 0 0 42 12)(font "Arial" ))
+		(text "tangenta" (rect 21 59 63 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk_phy" (rect 0 0 38 12)(font "Arial" ))
+		(text "clk_phy" (rect 21 75 59 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "i_rx_dv" (rect 0 0 36 12)(font "Arial" ))
+		(text "i_rx_dv" (rect 21 91 57 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "i_rxd[7..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "i_rxd[7..0]" (rect 21 107 70 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "clk_phyq" (rect 0 0 44 12)(font "Arial" ))
+		(text "clk_phyq" (rect 21 123 65 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 352 32)
+		(output)
+		(text "o_rx_dv" (rect 0 0 40 12)(font "Arial" ))
+		(text "o_rx_dv" (rect 282 27 322 39)(font "Arial" ))
+		(line (pt 352 32)(pt 336 32))
+	)
+	(port
+		(pt 352 48)
+		(output)
+		(text "o_rxd[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "o_rxd[7..0]" (rect 254 43 307 55)(font "Arial" ))
+		(line (pt 352 48)(pt 336 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 336 144))
+	)
+)
 (connector
 	(text "tx_en" (rect 752 720 779 732)(font "Arial" ))
 	(pt 784 736)
@@ -1986,213 +2143,6 @@ applicable agreement for further details.
 	(pt -288 592)
 )
 (connector
-	(text "rx_dv" (rect -456 936 -428 948)(font "Arial" ))
-	(pt -424 952)
-	(pt -464 952)
-)
-(connector
-	(text "rxd[3..0]" (rect -472 968 -431 980)(font "Arial" ))
-	(pt -424 984)
-	(pt -464 984)
-	(bus)
-)
-(connector
-	(text "RST" (rect 808 864 829 876)(font "Arial" ))
-	(pt 832 880)
-	(pt 800 880)
-)
-(connector
-	(text "txc" (rect 809 912 824 924)(font "Arial" ))
-	(pt 832 928)
-	(pt 800 928)
-)
-(connector
-	(text "tx_en" (rect 1008 864 1035 876)(font "Arial" ))
-	(pt 1000 880)
-	(pt 1024 880)
-)
-(connector
-	(text "txd[3..0]" (rect 1008 880 1049 892)(font "Arial" ))
-	(pt 1000 896)
-	(pt 1024 896)
-	(bus)
-)
-(connector
-	(text "clkq" (rect -149 872 -129 884)(font "Arial" ))
-	(pt -104 888)
-	(pt -152 888)
-)
-(connector
-	(text "RST" (rect -128 840 -107 852)(font "Arial" ))
-	(pt -104 856)
-	(pt -136 856)
-)
-(connector
-	(text "dv1" (rect -144 904 -126 916)(font "Arial" ))
-	(pt -104 920)
-	(pt -152 920)
-)
-(connector
-	(text "q_data[7..0]" (rect -144 920 -85 932)(font "Arial" ))
-	(pt -104 936)
-	(pt -152 936)
-	(bus)
-)
-(connector
-	(text "enable" (rect -138 1000 -107 1012)(font "Arial" ))
-	(pt -104 1016)
-	(pt -176 1016)
-)
-(connector
-	(text "receive_full" (rect -160 1032 -103 1044)(font "Arial" ))
-	(pt -104 1048)
-	(pt -168 1048)
-)
-(connector
-	(text "pause" (rect -160 1080 -131 1092)(font "Arial" ))
-	(pt -104 1096)
-	(pt -168 1096)
-)
-(connector
-	(text "flow_ctrl_answer" (rect -160 1096 -79 1108)(font "Arial" ))
-	(pt -104 1112)
-	(pt -168 1112)
-)
-(connector
-	(text "flow_ctrl_req_a" (rect -160 1048 -86 1060)(font "Arial" ))
-	(pt -104 1064)
-	(pt -168 1064)
-)
-(connector
-	(text "flow_ctrl_ok_a" (rect -160 1064 -90 1076)(font "Arial" ))
-	(pt -104 1080)
-	(pt -168 1080)
-)
-(connector
-	(text "fifo_going_full" (rect -168 1016 -98 1028)(font "Arial" ))
-	(pt -104 1032)
-	(pt -176 1032)
-)
-(connector
-	(text "flow_ctrl_req" (rect 176 904 238 916)(font "Arial" ))
-	(pt 168 920)
-	(pt 200 920)
-)
-(connector
-	(text "flow_ctrl_ok" (rect 176 920 235 932)(font "Arial" ))
-	(pt 168 936)
-	(pt 200 936)
-)
-(connector
-	(text "flow_a_get" (rect 176 936 229 948)(font "Arial" ))
-	(pt 168 952)
-	(pt 200 952)
-)
-(connector
-	(text "RST" (rect 320 792 341 804)(font "Arial" ))
-	(pt 336 808)
-	(pt 312 808)
-)
-(connector
-	(text "flow_ctrl_req" (rect 248 904 310 916)(font "Arial" ))
-	(pt 336 920)
-	(pt 288 920)
-)
-(connector
-	(text "flow_ctrl_ok" (rect 243 920 302 932)(font "Arial" ))
-	(pt 336 936)
-	(pt 288 936)
-)
-(connector
-	(text "flow_a_get" (rect 240 936 293 948)(font "Arial" ))
-	(pt 336 952)
-	(pt 288 952)
-)
-(connector
-	(text "enable" (rect 296 1000 327 1012)(font "Arial" ))
-	(pt 336 1016)
-	(pt 288 1016)
-)
-(connector
-	(text "fifo_going_full" (rect 673 936 743 948)(font "Arial" ))
-	(pt 672 952)
-	(pt 720 952)
-)
-(connector
-	(text "receive_full" (rect 680 952 737 964)(font "Arial" ))
-	(pt 672 968)
-	(pt 720 968)
-)
-(connector
-	(text "flow_ctrl_req_a" (rect 680 968 754 980)(font "Arial" ))
-	(pt 672 984)
-	(pt 720 984)
-)
-(connector
-	(text "flow_ctrl_ok_a" (rect 680 984 750 996)(font "Arial" ))
-	(pt 672 1000)
-	(pt 720 1000)
-)
-(connector
-	(text "pause" (rect 680 1000 709 1012)(font "Arial" ))
-	(pt 672 1016)
-	(pt 720 1016)
-)
-(connector
-	(text "flow_ctrl_answer" (rect 680 1016 761 1028)(font "Arial" ))
-	(pt 672 1032)
-	(pt 720 1032)
-)
-(connector
-	(text "dv2" (rect 680 824 698 836)(font "Arial" ))
-	(pt 672 840)
-	(pt 712 840)
-)
-(connector
-	(text "e_data[7..0]" (rect 697 840 756 852)(font "Arial" ))
-	(pt 672 856)
-	(pt 712 856)
-	(bus)
-)
-(connector
-	(text "dv2" (rect 808 896 826 908)(font "Arial" ))
-	(pt 832 912)
-	(pt 800 912)
-)
-(connector
-	(text "e_data[7..0]" (rect 792 928 851 940)(font "Arial" ))
-	(pt 832 944)
-	(pt 800 944)
-	(bus)
-)
-(connector
-	(text "q_data[7..0]" (rect -236 904 -177 916)(font "Arial" ))
-	(pt -248 920)
-	(pt -208 920)
-	(bus)
-)
-(connector
-	(text "dv1" (rect -240 888 -222 900)(font "Arial" ))
-	(pt -248 904)
-	(pt -200 904)
-)
-(connector
-	(text "dv1" (rect 296 952 314 964)(font "Arial" ))
-	(pt 336 968)
-	(pt 288 968)
-)
-(connector
-	(text "enable" (rect 264 968 295 980)(font "Arial" ))
-	(pt 248 984)
-	(pt 336 984)
-)
-(connector
-	(text "mac_rxd[7..0]" (rect 176 952 244 964)(font "Arial" ))
-	(pt 168 968)
-	(pt 200 968)
-	(bus)
-)
-(connector
 	(text "coll" (rect -279 680 -263 692)(font "Arial" ))
 	(pt -312 680)
 	(pt -288 680)
@@ -2202,11 +2152,6 @@ applicable agreement for further details.
 	(pt -248 784)
 	(pt -312 784)
 	(bus)
-)
-(connector
-	(text "rxc_2" (rect -148 856 -121 868)(font "Arial" ))
-	(pt -104 872)
-	(pt -152 872)
 )
 (connector
 	(text "rxc" (rect -480 256 -465 268)(font "Arial" ))
@@ -2219,24 +2164,9 @@ applicable agreement for further details.
 	(pt 24 272)
 )
 (connector
-	(text "txc_2" (rect 808 880 835 892)(font "Arial" ))
-	(pt 832 896)
-	(pt 800 896)
-)
-(connector
 	(text "txc_2" (rect 361 256 388 268)(font "Arial" ))
 	(pt 304 272)
 	(pt 376 272)
-)
-(connector
-	(text "txc_2" (rect 293 808 320 820)(font "Arial" ))
-	(pt 336 824)
-	(pt 312 824)
-)
-(connector
-	(text "rxc_2" (rect -456 920 -429 932)(font "Arial" ))
-	(pt -424 936)
-	(pt -464 936)
 )
 (connector
 	(pt -56 544)
@@ -2408,11 +2338,6 @@ applicable agreement for further details.
 	(pt -176 -128)
 )
 (connector
-	(text "rxc" (rect -454 904 -439 916)(font "Arial" ))
-	(pt -424 920)
-	(pt -464 920)
-)
-(connector
 	(text "Clk_25MHz" (rect 656 104 711 116)(font "Arial" ))
 	(pt 704 120)
 	(pt 664 120)
@@ -2510,12 +2435,6 @@ applicable agreement for further details.
 	(pt 1232 -8)
 )
 (connector
-	(text "mac_txd[7..0]" (rect 240 984 308 996)(font "Arial" ))
-	(pt 248 1000)
-	(pt 336 1000)
-	(bus)
-)
-(connector
 	(text "clk_tx" (rect 1755 936 1784 948)(font "Arial" ))
 	(pt 1744 944)
 	(pt 1696 944)
@@ -2529,11 +2448,6 @@ applicable agreement for further details.
 	(text "clk_to_txmac" (rect 1746 968 1812 980)(font "Arial" ))
 	(pt 1696 976)
 	(pt 1744 976)
-)
-(connector
-	(text "sync" (rect 704 1080 728 1092)(font "Arial" ))
-	(pt 672 1096)
-	(pt 720 1096)
 )
 (connector
 	(text "comp_i" (rect 1456 520 1491 532)(font "Arial" ))
@@ -2571,11 +2485,6 @@ applicable agreement for further details.
 	(pt -152 320)
 )
 (connector
-	(text "RST" (rect -456 888 -435 900)(font "Arial" ))
-	(pt -424 904)
-	(pt -464 904)
-)
-(connector
 	(text "mac_rxd[7..0]" (rect 1192 -8 1260 4)(font "Arial" ))
 	(pt 1264 8)
 	(pt 1232 8)
@@ -2597,12 +2506,6 @@ applicable agreement for further details.
 	(pt 1544 800)
 )
 (connector
-	(text "clk_to_txmac" (rect 272 824 338 836)(font "Arial" ))
-	(pt 336 840)
-	(pt 312 840)
-)
-(connector
-	(text "<<__$DEF_ALIAS304>>" (rect 1803 248 1921 260)(font "Arial" )(invisible))
 	(pt 1752 264)
 	(pt 1880 264)
 )
@@ -2671,6 +2574,296 @@ applicable agreement for further details.
 	(pt 1576 784)
 	(pt 1544 784)
 )
+(connector
+	(text "RST" (rect 320 1016 341 1028)(font "Arial" ))
+	(pt 336 1032)
+	(pt 312 1032)
+)
+(connector
+	(text "flow_ctrl_req" (rect 248 1128 310 1140)(font "Arial" ))
+	(pt 336 1144)
+	(pt 288 1144)
+)
+(connector
+	(text "flow_ctrl_ok" (rect 243 1144 302 1156)(font "Arial" ))
+	(pt 336 1160)
+	(pt 288 1160)
+)
+(connector
+	(text "flow_a_get" (rect 240 1160 293 1172)(font "Arial" ))
+	(pt 336 1176)
+	(pt 288 1176)
+)
+(connector
+	(text "enable" (rect 296 1224 327 1236)(font "Arial" ))
+	(pt 336 1240)
+	(pt 288 1240)
+)
+(connector
+	(text "fifo_going_full" (rect 673 1160 743 1172)(font "Arial" ))
+	(pt 672 1176)
+	(pt 720 1176)
+)
+(connector
+	(text "receive_full" (rect 680 1176 737 1188)(font "Arial" ))
+	(pt 672 1192)
+	(pt 720 1192)
+)
+(connector
+	(text "flow_ctrl_req_a" (rect 680 1192 754 1204)(font "Arial" ))
+	(pt 672 1208)
+	(pt 720 1208)
+)
+(connector
+	(text "flow_ctrl_ok_a" (rect 680 1208 750 1220)(font "Arial" ))
+	(pt 672 1224)
+	(pt 720 1224)
+)
+(connector
+	(text "pause" (rect 680 1224 709 1236)(font "Arial" ))
+	(pt 672 1240)
+	(pt 720 1240)
+)
+(connector
+	(text "flow_ctrl_answer" (rect 680 1240 761 1252)(font "Arial" ))
+	(pt 672 1256)
+	(pt 720 1256)
+)
+(connector
+	(text "dv2" (rect 680 1048 698 1060)(font "Arial" ))
+	(pt 672 1064)
+	(pt 712 1064)
+)
+(connector
+	(text "e_data[7..0]" (rect 697 1064 756 1076)(font "Arial" ))
+	(pt 672 1080)
+	(pt 712 1080)
+	(bus)
+)
+(connector
+	(text "dv1" (rect 296 1176 314 1188)(font "Arial" ))
+	(pt 336 1192)
+	(pt 288 1192)
+)
+(connector
+	(text "enable" (rect 264 1192 295 1204)(font "Arial" ))
+	(pt 248 1208)
+	(pt 336 1208)
+)
+(connector
+	(text "txc_2" (rect 293 1032 320 1044)(font "Arial" ))
+	(pt 336 1048)
+	(pt 312 1048)
+)
+(connector
+	(text "mac_txd[7..0]" (rect 240 1208 308 1220)(font "Arial" ))
+	(pt 248 1224)
+	(pt 336 1224)
+	(bus)
+)
+(connector
+	(text "sync" (rect 704 1304 728 1316)(font "Arial" ))
+	(pt 672 1320)
+	(pt 720 1320)
+)
+(connector
+	(text "clk_to_txmac" (rect 272 1048 338 1060)(font "Arial" ))
+	(pt 336 1064)
+	(pt 312 1064)
+)
+(connector
+	(text "RST" (rect 848 1288 869 1300)(font "Arial" ))
+	(pt 872 1304)
+	(pt 840 1304)
+)
+(connector
+	(text "txc" (rect 849 1336 864 1348)(font "Arial" ))
+	(pt 872 1352)
+	(pt 840 1352)
+)
+(connector
+	(text "tx_en" (rect 1048 1288 1075 1300)(font "Arial" ))
+	(pt 1040 1304)
+	(pt 1064 1304)
+)
+(connector
+	(text "txd[3..0]" (rect 1048 1304 1089 1316)(font "Arial" ))
+	(pt 1040 1320)
+	(pt 1064 1320)
+	(bus)
+)
+(connector
+	(text "dv2" (rect 848 1320 866 1332)(font "Arial" ))
+	(pt 872 1336)
+	(pt 840 1336)
+)
+(connector
+	(text "e_data[7..0]" (rect 832 1352 891 1364)(font "Arial" ))
+	(pt 872 1368)
+	(pt 840 1368)
+	(bus)
+)
+(connector
+	(text "txc_2" (rect 848 1304 875 1316)(font "Arial" ))
+	(pt 872 1320)
+	(pt 840 1320)
+)
+(connector
+	(text "clkq" (rect -173 1136 -153 1148)(font "Arial" ))
+	(pt -128 1152)
+	(pt -176 1152)
+)
+(connector
+	(text "RST" (rect -152 1104 -131 1116)(font "Arial" ))
+	(pt -128 1120)
+	(pt -160 1120)
+)
+(connector
+	(text "enable" (rect -162 1264 -131 1276)(font "Arial" ))
+	(pt -128 1280)
+	(pt -200 1280)
+)
+(connector
+	(text "receive_full" (rect -184 1296 -127 1308)(font "Arial" ))
+	(pt -128 1312)
+	(pt -192 1312)
+)
+(connector
+	(text "pause" (rect -184 1344 -155 1356)(font "Arial" ))
+	(pt -128 1360)
+	(pt -192 1360)
+)
+(connector
+	(text "flow_ctrl_answer" (rect -184 1360 -103 1372)(font "Arial" ))
+	(pt -128 1376)
+	(pt -192 1376)
+)
+(connector
+	(text "flow_ctrl_req_a" (rect -184 1312 -110 1324)(font "Arial" ))
+	(pt -128 1328)
+	(pt -192 1328)
+)
+(connector
+	(text "flow_ctrl_ok_a" (rect -184 1328 -114 1340)(font "Arial" ))
+	(pt -128 1344)
+	(pt -192 1344)
+)
+(connector
+	(text "fifo_going_full" (rect -192 1280 -122 1292)(font "Arial" ))
+	(pt -128 1296)
+	(pt -200 1296)
+)
+(connector
+	(text "mac_rxd[7..0]" (rect 152 1216 220 1228)(font "Arial" ))
+	(pt 144 1232)
+	(pt 176 1232)
+	(bus)
+)
+(connector
+	(text "rxc_2" (rect -172 1120 -145 1132)(font "Arial" ))
+	(pt -128 1136)
+	(pt -176 1136)
+)
+(connector
+	(text "flow_ctrl_req" (rect 152 1168 214 1180)(font "Arial" ))
+	(pt 144 1184)
+	(pt 176 1184)
+)
+(connector
+	(text "flow_ctrl_ok" (rect 152 1184 211 1196)(font "Arial" ))
+	(pt 144 1200)
+	(pt 176 1200)
+)
+(connector
+	(text "flow_a_get" (rect 152 1200 205 1212)(font "Arial" ))
+	(pt 144 1216)
+	(pt 176 1216)
+)
+(connector
+	(text "rx_dv" (rect -520 1288 -492 1300)(font "Arial" ))
+	(pt -488 1304)
+	(pt -528 1304)
+)
+(connector
+	(text "rxd[3..0]" (rect -536 1320 -495 1332)(font "Arial" ))
+	(pt -488 1336)
+	(pt -528 1336)
+	(bus)
+)
+(connector
+	(text "q_data[7..0]" (rect -300 1256 -241 1268)(font "Arial" ))
+	(pt -312 1272)
+	(pt -272 1272)
+	(bus)
+)
+(connector
+	(text "dv1" (rect -304 1240 -286 1252)(font "Arial" ))
+	(pt -312 1256)
+	(pt -264 1256)
+)
+(connector
+	(text "rxc_2" (rect -520 1272 -493 1284)(font "Arial" ))
+	(pt -488 1288)
+	(pt -528 1288)
+)
+(connector
+	(text "rxc" (rect -518 1256 -503 1268)(font "Arial" ))
+	(pt -488 1272)
+	(pt -528 1272)
+)
+(connector
+	(text "RST" (rect -520 1240 -499 1252)(font "Arial" ))
+	(pt -488 1256)
+	(pt -528 1256)
+)
+(connector
+	(text "buf_rx_dv" (rect -184 1168 -134 1180)(font "Arial" ))
+	(pt -128 1184)
+	(pt -176 1184)
+)
+(connector
+	(text "buf_rx_data[7..0]" (rect -200 1184 -116 1196)(font "Arial" ))
+	(pt -128 1200)
+	(pt -176 1200)
+	(bus)
+)
+(connector
+	(text "RST" (rect -8 792 13 804)(font " Arial" ))
+	(pt 16 808)
+	(pt -16 808)
+)
+(connector
+	(text "tang" (rect -8 824 13 836)(font " Arial" ))
+	(pt 16 840)
+	(pt -16 840)
+)
+(connector
+	(text "q_data[7..0]" (rect -40 872 19 884)(font " Arial" ))
+	(pt 16 888)
+	(pt -16 888)
+	(bus)
+)
+(connector
+	(text "dv1" (rect -8 856 10 868)(font " Arial" ))
+	(pt 16 872)
+	(pt -16 872)
+)
+(connector
+	(text "rxc_2" (rect -8 840 19 852)(font " Arial" ))
+	(pt 16 856)
+	(pt -16 856)
+)
+(connector
+	(text "buf_rx_dv" (rect 388 792 438 804)(font " Arial" ))
+	(pt 368 808)
+	(pt 400 808)
+)
+(connector
+	(text "buf_rx_data[7..0]" (rect 386 808 470 820)(font " Arial" ))
+	(pt 368 824)
+	(pt 400 824)
+	(bus)
+)
 (junction (pt 40 680))
 (junction (pt -80 544))
 (junction (pt -80 592))
@@ -2681,7 +2874,7 @@ applicable agreement for further details.
 (text "Demodulator" (rect 1144 440 1225 455)(font "Times New Roman" (color 255 0 0)(font_size 10)))
 (text "PLL_set" (rect 1000 48 1056 64)(font "Arial" (color 0 0 0)(font_size 10)))
 (rectangle (rect -600 -184 1128 424)(color 0 0 127)(line_width 3))
-(rectangle (rect -600 432 1128 1216)(color 0 170 0)(line_width 3))
+(rectangle (rect -600 432 1128 1456)(color 0 170 0)(line_width 3))
 (rectangle (rect 1136 -184 2168 424)(color 170 0 0)(line_width 3))
 (rectangle (rect 1136 432 2168 1216)(color 255 0 0)(line_width 3))
 (rectangle (rect 624 32 1064 360))
